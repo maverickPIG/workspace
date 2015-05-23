@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../../js/require2.1.11.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			require.config({
+				config:{
+					bar:{
+						size:100
+					},
+					baz:{
+						color:"red"
+					}
+				},
+				paths:{
+					bar:"js/bar",
+					baz:"js/baz"
+				}
+			})
+			require(["bar","baz"],function(bar,baz){
+				debugger;
+				console.log(baz.config().color);
+				console.log(bar.config().size);
+			})
+		</script>
+	</body>
+</html>

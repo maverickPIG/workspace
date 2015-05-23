@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>jsonp测试</title>
+		<script src="../../js/require2.1.11.js"text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<script>
+			require.config({
+				baseUrl:"js"
+			})
+			require(["./jsonp.html?callback=define"],function(data){
+				console.log(data.aa)
+			})
+		</script>
+	</body>
+</html>
