@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="avalon.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.ms-controller{
+				visibility: hidden;
+			}
+		</style>
+		<script type="text/javascript">
+			//定义avalon的插入值的界定符
+			avalon.config({
+				interpolate:["[[","]]"]
+			})
+			avalon.ready(function(){
+				avalon.define({
+					$id:"test",
+					word:"Hello Avalon",
+					Suffix:"duplex"
+				})
+				avalon.scan()
+			})
+		</script>
+	</head>
+	<body>
+		<div ms-controller="test" class="ms-controller">
+			<h1>[[word]]!!!</h1>
+			
+		</div>
+	</body>
+</html>
