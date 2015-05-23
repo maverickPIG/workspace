@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>ms-duplex[text]</title>
+		<script src="avalon.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			avalon.ready(function() {
+				avalon.define({
+					$id: 'test',
+					username: 'felixlu',
+					password: "abc124",
+					profile: "test string",
+					isSure:true,
+					hobbies:[]
+				});
+				avalon.scan();
+			})
+		</script>
+	</head>
+
+	<body ms-controller="test">
+		<div>
+			<input type="text" ms-duplex="username"/>
+			<input type="password" ms-duplex="password"/>
+			<textarea ms-duplex="profile"></textarea>
+			<input type="radio" ms-duplex="isSure"/>
+		</div>
+		<div>
+			<input type="checkbox" value="football" ms-duplex="hobbies"/>足球
+			<input type="checkbox" value="baseketball" ms-duplex="hobbies"/>篮球
+			<input type="checkbox" value="baseball" ms-duplex="hobbies"/>棒球
+		</div>
+		<ul>
+			<li>{{username}}</li>
+			<li>{{password}}</li>
+			<li>{{profile}}</li>
+			<li>{{isSure}}</li>
+			<li>{{hobbies}}</li>
+		</ul>
+	</body>
+
+</html>
