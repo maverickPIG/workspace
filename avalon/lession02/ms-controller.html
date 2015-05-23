@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="avalon.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			avalon.ready(function(){
+				avalon.define({
+					$id:"AAA",
+					name:"yqj",
+					color:"green"
+				});
+				avalon.define({
+					$id:"BBB",
+					name:"sphinx",
+					color:"red"
+				})
+				avalon.define({
+					$id:"CCC",
+					name:"dragon",
+				})
+				avalon.scan()
+			})
+		</script>
+	</head>
+
+	<body>
+		<div ms-controller="AAA">
+			<div>
+				{{name}}:{{color}}
+			</div>
+			<div ms-controller="BBB">
+				<div>
+					{{name}}:{{color}}
+				</div>
+			</div>
+			<div ms-controller="CCC">
+				<div>
+					{{name}}:{{color}}
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
