@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>shim测试</title>
+		<script src="../../js/require2.1.11.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="text">hello test</div>
+		<script type="text/javascript">
+			require.config({
+				baseUrl:"js",
+				shim:{
+					jquery:{
+						exports:"jQuery"
+					},
+					foo:{
+						deps:['jQuery'],
+						exports:"module"
+					}
+				},
+				paths:{
+					jQuery:"lib/jquery-1.7.2",
+					foo:"app/shim/foo"
+				}
+			});
+			require(["jQuery","foo"],function(_$,foo){
+//				console.log(_$("#text").text())
+				console.log(foo.sayA());
+				console.log(foo.sayB());
+				console.log(foo.sayText());
+			})
+		</script>
+	</body>
+</html>
