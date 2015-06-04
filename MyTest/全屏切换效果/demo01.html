@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>页面切换</title>
+		<style type="text/css">
+			h1,body,html{
+				padding: 0;
+				margin: 0;
+			}
+			body{
+				font-family: arial,"microsoft yahei",sans-serif;
+			}
+			h1{
+				font-size: 6em;
+				font-weight: normal;
+			}
+			p{
+				font-size: 2em;
+				margin: 0.5em 0 2em 0;
+			}
+			html,body{
+				height: 100%;
+				overflow: hidden;
+			}
+			#container,.section{
+				height: 100%;
+			}
+			#section0,#section1,#section2,#section3{
+				background-color: #000;
+				background-size: cover;
+				background-position: 50% 50%;
+			}
+			#section0{
+				background-image: url(images/1.jpg);
+			}#section1{
+				background-image: url(images/2.jpg);
+			}#section2{
+				background-image: url(images/3.jpg);
+			}#section3{
+				background-image: url(images/4.jpg);
+			}
+			.left{
+				float: left;
+			}
+			#container{
+				width: 400%;
+			}
+			.section{
+				width: 25%;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<div id="section0" class="section left"></div>
+			<div id="section1" class="section left"></div>
+			<div id="section2" class="section left"></div>
+			<div id="section3" class="section left"></div>
+		</div>
+	</body>
+</html>
