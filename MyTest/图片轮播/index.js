@@ -34,7 +34,8 @@ var defaults = {
 	hideClickBar: true, //是否显示点击小按钮
 	hideLrBar: true, //是否显示左右按钮
 	ad_data: null, //广告数据
-	width: '575px' //默认宽度(首页：575px、公会房：466px、百度两栏tf：490px)
+	width: '575px', //默认宽度(首页：575px、公会房：466px、百度两栏tf：490px)
+	baseUrl:"./image/"//默认图片地址前缀
 };
 
 /**
@@ -54,7 +55,7 @@ var adSlider = {
 				if ((/^\/tf\//).test(location.pathname)) {
 					_$("div.F-adv div.carousel-diagram div.carousel-diagram-wrap").width("490px");
 				}
-				sLi += '<li style="width: ' + _DOMwidth + '"><a target="_blank" href="' + defaults.ad_data[i].url + '" title="' + defaults.ad_data[i].title + '"><img src="http://image.cache.xiu8.com/images/other/m/' + img_path + '" style="width:' + _DOMwidth + '"/></a></li>';
+				sLi += '<li style="width: ' + _DOMwidth + '"><a target="_blank" href="' + (defaults.ad_data[i].url) + '" title="' + defaults.ad_data[i].title + '"><img src="'+(defaults.baseUrl)+ img_path + '" style="width:' + _DOMwidth + '"/></a></li>';
 				sA += '<a href="javascript:;" class=" ' + (i == 0 ? 'cur' : '') + ' " rel="1"></a>';
 			}
 			//多渲染两层dom结构，实现无缝轮播
@@ -218,13 +219,13 @@ xiubaAd = function(options) {
 var _data = {
 	"adInfo": [{
 		"id": 74,
-		"img": "1425959935645.jpg",
+		"img": "1.jpg",
 		"msg": "",
 		"title": "骑士印记",
 		"url": "/act/knight"
 	}, {
 		"id": 76,
-		"img": "1425960042843.jpg",
+		"img": "2.jpg",
 		"msg": "",
 		"title": "土豪遇到新主播",
 		"url": "/activity/tuhao"
