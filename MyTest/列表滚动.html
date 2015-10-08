@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>列表滚动</title>
+		<style type="text/css">
+			.mv_bg {
+				margin-top: 70px;
+				margin-right: 25px;
+				margin-left: 25px;
+				margin-bottom: 40px;
+				overflow: hidden;
+				height: 260px;
+			}
+			ol,
+			ul {
+				list-style: none;
+			}
+			.mv_bg li {
+				margin-right: 25px;
+				text-align: center;
+				color: blueviolet;
+				margin-bottom: 5px;
+				margin-top: 5px;
+			}
+			li span {
+				text-align: center;
+				width: 80px;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				display: inline-block;
+				vertical-align: bottom;
+			}
+		</style>
+		<script src="../js/jquery-1.7.2.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<ul class="mv_bg" id="rankList">
+			<li style="margin-top: 5px;">
+				<span>烧焦的蚂蚁</span>抢到 世界说 1个
+			</li>
+			<li style="margin-top: 5px;">
+				<span>我名素曦</span>抢到 世界说 1个
+			</li>
+			<li style="margin-top: 5px;">
+				<span> 游客宝宝。</span>抢到 世界说 1个
+			</li>
+			<li style="margin-top: 5px;">
+				<span>吾一小人</span>抢到 世界说 1个
+			</li>
+			<li style="margin-top: 5px;">
+				<span>执念.莫相言</span>抢到 贴条 5个
+			</li>
+			<li style="margin-top: 5px;">
+				<span>请叫我西木教兽</span>抢到 贴条 5个
+			</li>
+			<li style="margin-top: 5px;">
+				<span>    小修 </span>抢到 贴条 5个
+			</li>
+			<li style="margin-top: 5px;"><span>陈涛瞬间</span>抢到 贴条 5个
+			</li>
+			<li style="margin-top: 5px;"><span>  	     </span>抢到 500秀币
+			</li>
+			<li style="margin-top: 5px;"><span>    小修 </span>抢到 500秀币
+			</li>
+			<li style="margin-top: 5px;"><span>Mercurius┼</span>抢到 500秀币
+			</li>
+			<li style="margin-top: 5px;"><span>███哈の小天███</span>抢到 超级拖拉机 3天
+			</li>
+			<li style="margin-top: 5px;"><span>秦*无一</span>抢到 世界说 5个
+			</li>
+			<li style="margin-top: 5px;"><span>蓝天下的雄鹰</span>抢到 10000秀币
+			</li>
+			<li style="margin-top: 5px;"><span>孤独的守望者</span>抢到 世界说 5个
+			</li>
+			<li style="margin-top: 5px;"><span>执念.莫相言</span>抢到 5000秀币
+			</li>
+			<li style="margin-top: 5px;"><span>  	     </span>抢到 哈雷摩托 3天
+			</li>
+		</ul>
+	</body>
+	<script type="text/javascript">
+		var rankDom = $("#rankList");
+		var rankHtml = "";
+		setInterval(function() {
+			$(rankDom).find("li:first").animate({
+				marginTop: "-22px"
+			}, 1000, function() {
+				var $li = $("#rankList li:eq(0)").remove();
+				$li.css("marginTop", "5px");
+				rankDom.append($li);
+			});
+		}, 3000);
+	</script>
+
+</html>
